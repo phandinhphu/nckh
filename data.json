@@ -1,0 +1,422 @@
+[
+    {
+        "code": "1090166",
+        "name": "Tiếng Anh 2",
+        "credits": 4.0,
+        "isRequired": true,
+        "expectedSemester": 2,
+        "prerequisites": ["1090061"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1130300",
+        "name": "Kinh tế chính trị Mác - Lênin",
+        "credits": 2.0,
+        "isRequired": true,
+        "expectedSemester": 2,
+        "prerequisites": ["1130299"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1130049",
+        "name": "Pháp luật đại cương",
+        "credits": 2.0,
+        "isRequired": true,
+        "expectedSemester": 2,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "2030003",
+        "name": "Kỹ năng giao tiếp",
+        "credits": 2.0,
+        "isRequired": true,
+        "expectedSemester": 2,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050274",
+        "name": "Nhập môn Thuật toán",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 2,
+        "prerequisites": ["1050273"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1010387",
+        "name": "Phương pháp tính",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 2,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050016",
+        "name": "Hệ quản trị cơ sở dữ liệu",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 2,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1120191",
+        "name": "Giáo dục thể chất 2",
+        "credits": 1.0,
+        "isRequired": false,
+        "expectedSemester": 2,
+        "prerequisites": ["1120190"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1130301",
+        "name": "Chủ nghĩa xã hội khoa học",
+        "credits": 2.0,
+        "isRequired": true,
+        "expectedSemester": 3,
+        "prerequisites": ["1130300"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050024",
+        "name": "Lập trình hướng đối tượng",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 3,
+        "prerequisites": ["1050273"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1010126",
+        "name": "Xác suất thống kê",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 3,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050043",
+        "name": "Nhập môn mạng máy tính",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 3,
+        "prerequisites": ["1050124"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050075",
+        "name": "Toán rời rạc",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 3,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050275",
+        "name": "Giới thiệu ngành CNTT",
+        "credits": 1.0,
+        "isRequired": true,
+        "expectedSemester": 3,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050276",
+        "name": "Kỹ thuật lập trình",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 3,
+        "prerequisites": ["1050274"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1120189",
+        "name": "Giáo dục thể chất 3",
+        "credits": 1.0,
+        "isRequired": false,
+        "expectedSemester": 3,
+        "prerequisites": ["1120188"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1130302",
+        "name": "Lịch sử Đảng Cộng sản Việt Nam",
+        "credits": 2.0,
+        "isRequired": true,
+        "expectedSemester": 4,
+        "prerequisites": ["1130301"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050333",
+        "name": "Cấu trúc dữ liệu",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 4,
+        "prerequisites": ["1050273"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050277",
+        "name": "Tiếng Anh cho CNTT",
+        "credits": 2.0,
+        "isRequired": true,
+        "expectedSemester": 4,
+        "prerequisites": ["1090166"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050278",
+        "name": "Thực tập nhận thức",
+        "credits": 1.0,
+        "isRequired": true,
+        "expectedSemester": 4,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050279",
+        "name": "Lập trình trên Desktop",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 4,
+        "prerequisites": ["1050016", "1050024"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050040",
+        "name": "Nhập môn cơ sở dữ liệu",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 4,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050029",
+        "name": "Lập trình ứng dụng Web",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 4,
+        "prerequisites": ["1050016", "1050273"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050037",
+        "name": "Nguyên lý hệ điều hành",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 5,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050041",
+        "name": "Nhập môn công nghệ phần mềm",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 5,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050112",
+        "name": "Nhập môn Trí tuệ nhân tạo",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 5,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050058",
+        "name": "Quản trị mạng",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 5,
+        "prerequisites": ["1050043"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050136",
+        "name": "Thực hành làm việc nhóm",
+        "credits": 2.0,
+        "isRequired": true,
+        "expectedSemester": 5,
+        "prerequisites": ["1050016", "1050029"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1130091",
+        "name": "Tư tưởng Hồ Chí Minh",
+        "credits": 2.0,
+        "isRequired": true,
+        "expectedSemester": 5,
+        "prerequisites": ["1130302"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1150422",
+        "name": "Khởi nghiệp",
+        "credits": 2.0,
+        "isRequired": true,
+        "expectedSemester": 5,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050329",
+        "name": "Kiểm thử và đảm bảo chất lượng phần mềm",
+        "credits": 4.0,
+        "isRequired": true,
+        "expectedSemester": 6,
+        "prerequisites": ["1010126"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050285",
+        "name": "Phân tích và đặc tả yêu cầu phần mềm",
+        "credits": 4.0,
+        "isRequired": true,
+        "expectedSemester": 6,
+        "prerequisites": ["1050041"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050286",
+        "name": "Công nghệ Web",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 6,
+        "prerequisites": ["1050029"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050324",
+        "name": "Ngôn ngữ mô hình hóa",
+        "credits": 4.0,
+        "isRequired": true,
+        "expectedSemester": 6,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050165",
+        "name": "Phát triển phần mềm hướng đối tượng",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 7,
+        "prerequisites": ["1050024"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050325",
+        "name": "Một số vấn đề hiện đại trong CNPM",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 7,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050305",
+        "name": "Thiết kế phần mềm",
+        "credits": 4.0,
+        "isRequired": true,
+        "expectedSemester": 7,
+        "prerequisites": ["1050285", "1050324"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050306",
+        "name": "Kiểm thử tự động",
+        "credits": 4.0,
+        "isRequired": true,
+        "expectedSemester": 7,
+        "prerequisites": ["1050041", "1050329"],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050138",
+        "name": "Thực tập tốt nghiệp",
+        "credits": 3.0,
+        "isRequired": true,
+        "expectedSemester": 8,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050332",
+        "name": "Khoá Luận tốt nghiệp",
+        "credits": 6.0,
+        "isRequired": false,
+        "expectedSemester": 8,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050115",
+        "name": "Chuyên đề 1: Những vấn đề hiện đại của công nghệ thông tin",
+        "credits": 2.0,
+        "isRequired": false,
+        "expectedSemester": 8,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    },
+    {
+        "code": "1050321",
+        "name": "Thực hành chuyên ngành Công nghệ phần mềm",
+        "credits": 4.0,
+        "isRequired": false,
+        "expectedSemester": 8,
+        "prerequisites": [],
+        "corequisites": [],
+        "equivalents": []
+    }
+]
