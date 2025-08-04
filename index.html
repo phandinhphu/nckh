@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ thống Lập Kế hoạch Học tập Tối ưu</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-graduation-cap"></i> Hệ thống Lập Kế hoạch Học tập Tối ưu</h1>
+                <p>Thuật toán DAG cho việc xếp lịch môn học thông minh</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-tab="input">
+                <i class="fas fa-user-edit"></i> Thông tin Sinh viên
+            </button>
+            <button class="nav-tab" data-tab="analysis">
+                <i class="fas fa-project-diagram"></i> Phân tích DAG
+            </button>
+            <button class="nav-tab" data-tab="scheduling">
+                <i class="fas fa-calendar-alt"></i> Lập lịch Học tập
+            </button>
+            <button class="nav-tab" data-tab="evaluation">
+                <i class="fas fa-chart-line"></i> Đánh giá & Tối ưu
+            </button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- GIAI ĐOẠN 1: Chuẩn bị dữ liệu và tiền xử lý -->
+            <section id="input" class="tab-content active">
+                <div class="section-header">
+                    <h2><i class="fas fa-database"></i> Giai đoạn 1: Chuẩn bị dữ liệu và tiền xử lý</h2>
+                    <p>Thu thập thông tin sinh viên và xây dựng đồ thị môn học</p>
+                </div>
+
+                <div class="input-grid">
+                    <div class="input-section">
+                        <h3><i class="fas fa-user"></i> Thông tin sinh viên</h3>
+                        <div class="form-group">
+                            <label for="studentId">Mã sinh viên:</label>
+                            <input type="text" id="studentId" placeholder="Nhập mã sinh viên">
+                        </div>
+                        <div class="form-group">
+                            <label for="studentName">Họ tên:</label>
+                            <input type="text" id="studentName" placeholder="Nhập họ tên">
+                        </div>
+                        <div class="form-group">
+                            <label for="currentSemester">Học kỳ hiện tại:</label>
+                            <select id="currentSemester">
+                                <option value="1">Học kỳ 1</option>
+                                <option value="2">Học kỳ 2</option>
+                                <option value="3">Học kỳ 3</option>
+                                <option value="4">Học kỳ 4</option>
+                                <option value="5">Học kỳ 5</option>
+                                <option value="6">Học kỳ 6</option>
+                                <option value="7">Học kỳ 7</option>
+                                <option value="8">Học kỳ 8</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-section">
+                        <h3><i class="fas fa-check-circle"></i> Môn đã hoàn thành</h3>
+                        <div class="completed-courses">
+                            <div class="search-box">
+                                <input type="text" id="courseSearch" placeholder="Tìm kiếm môn học...">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div id="courseList" class="course-list"></div>
+                        </div>
+                        <div id="selectedCourses" class="selected-courses">
+                            <h4>Môn đã chọn: <span id="selectedCount">0</span> môn</h4>
+                            <div id="selectedCoursesContainer"></div>
+                        </div>
+                    </div>
+
+                    <div class="input-section">
+                        <h3><i class="fas fa-cogs"></i> Tùy chọn thuật toán</h3>
+                        <div class="form-group">
+                            <label for="strategy">Chiến lược lập lịch:</label>
+                            <select id="strategy">
+                                <option value="balanced">Cân bằng</option>
+                                <option value="fast">Hoàn thành nhanh nhất</option>
+                                <option value="load-balanced">Cân bằng tải</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="enableAdvanced" checked>
+                            <label for="enableAdvanced">Cho phép học vượt</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" id="includeSummer" checked>
+                            <label for="includeSummer">Bao gồm học kỳ hè</label>
+                        </div>
+                        <div class="form-group">
+                            <label for="maxCredits">Tín chỉ tối đa/học kỳ:</label>
+                            <input type="number" id="maxCredits" value="22" min="12" max="30">
+                        </div>
+                        <button id="generatePlan" class="btn-primary">
+                            <i class="fas fa-magic"></i> Tạo kế hoạch học tập
+                        </button>
+                    </div>
+                </div>
+
+                <div class="data-preview">
+                    <h3><i class="fas fa-eye"></i> Xem trước dữ liệu đã tải</h3>
+                    <div id="dataStats" class="stats-grid"></div>
+                </div>
+            </section>
+
+            <!-- GIAI ĐOẠN 2: Xác định các môn học khả dụng -->
+            <section id="analysis" class="tab-content">
+                <div class="section-header">
+                    <h2><i class="fas fa-sitemap"></i> Giai đoạn 2: Phân tích DAG và môn học khả dụng</h2>
+                    <p>Xây dựng đồ thị có hướng và xác định môn học sẵn sàng</p>
+                </div>
+
+                <div class="analysis-grid">
+                    <div class="dag-visualization">
+                        <h3><i class="fas fa-project-diagram"></i> Đồ thị DAG môn học</h3>
+                        <div id="dagContainer" class="dag-container">
+                            <p class="placeholder">Đồ thị sẽ được hiển thị sau khi tạo kế hoạch</p>
+                        </div>
+                        <div class="dag-controls">
+                            <button id="resetZoom" class="btn-secondary">
+                                <i class="fas fa-search-minus"></i> Reset Zoom
+                            </button>
+                            <button id="centerGraph" class="btn-secondary">
+                                <i class="fas fa-crosshairs"></i> Căn giữa
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="ready-courses">
+                        <h3><i class="fas fa-list-check"></i> Môn học khả dụng</h3>
+                        <div class="ready-filters">
+                            <select id="semesterFilter">
+                                <option value="all">Tất cả học kỳ</option>
+                                <option value="current">Học kỳ hiện tại</option>
+                                <option value="next">Học kỳ tiếp theo</option>
+                                <option value="advanced">Học vượt</option>
+                            </select>
+                            <select id="categoryFilter">
+                                <option value="all">Tất cả loại</option>
+                                <option value="required">Bắt buộc</option>
+                                <option value="elective">Tự chọn</option>
+                            </select>
+                        </div>
+                        <div id="readyCoursesContainer" class="ready-courses-list"></div>
+                    </div>
+
+                    <div class="prerequisites-analysis">
+                        <h3><i class="fas fa-analytics"></i> Phân tích ràng buộc</h3>
+                        <div id="prerequisitesStats" class="prerequisites-stats"></div>
+                        <div id="bottlenecks" class="bottlenecks"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GIAI ĐOẠN 3: Phân bổ môn học vào các học kỳ -->
+            <section id="scheduling" class="tab-content">
+                <div class="section-header">
+                    <h2><i class="fas fa-calendar-alt"></i> Giai đoạn 3: Lập lịch môn học tối ưu</h2>
+                    <p>Phân bổ môn học vào các học kỳ theo thuật toán tối ưu</p>
+                </div>
+
+                <div class="scheduling-container">
+                    <div class="schedule-controls">
+                        <div class="control-group">
+                            <button id="autoSchedule" class="btn-primary">
+                                <i class="fas fa-magic"></i> Tự động lập lịch
+                            </button>
+                            <button id="validateSchedule" class="btn-secondary">
+                                <i class="fas fa-check-double"></i> Kiểm tra hợp lệ
+                            </button>
+                            <button id="optimizeSchedule" class="btn-accent">
+                                <i class="fas fa-rocket"></i> Tối ưu hóa
+                            </button>
+                        </div>
+                        <div class="view-controls">
+                            <button id="viewByYear" class="btn-view active">Theo năm</button>
+                            <button id="viewBySemester" class="btn-view">Theo học kỳ</button>
+                            <button id="viewTimeline" class="btn-view">Timeline</button>
+                        </div>
+                    </div>
+
+                    <div id="scheduleDisplay" class="schedule-display">
+                        <div class="schedule-placeholder">
+                            <i class="fas fa-calendar-plus"></i>
+                            <p>Nhấn "Tự động lập lịch" để bắt đầu</p>
+                        </div>
+                    </div>
+
+                    <div class="manual-adjustment">
+                        <h3><i class="fas fa-hand-paper"></i> Điều chỉnh thủ công</h3>
+                        <div class="adjustment-tools">
+                            <p><i class="fas fa-info-circle"></i> Kéo thả môn học giữa các học kỳ để điều chỉnh</p>
+                            <div class="tool-buttons">
+                                <button id="undoMove" class="btn-secondary" disabled>
+                                    <i class="fas fa-undo"></i> Hoàn tác
+                                </button>
+                                <button id="redoMove" class="btn-secondary" disabled>
+                                    <i class="fas fa-redo"></i> Làm lại
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- GIAI ĐOẠN 4: Đánh giá và Phản hồi -->
+            <section id="evaluation" class="tab-content">
+                <div class="section-header">
+                    <h2><i class="fas fa-chart-line"></i> Giai đoạn 4: Đánh giá và tối ưu hóa</h2>
+                    <p>Phân tích hiệu quả và đưa ra khuyến nghị cải thiện</p>
+                </div>
+
+                <div class="evaluation-grid">
+                    <div class="statistics-panel">
+                        <h3><i class="fas fa-chart-pie"></i> Thống kê tổng quan</h3>
+                        <div id="overallStats" class="stats-container"></div>
+                    </div>
+
+                    <div class="validation-panel">
+                        <h3><i class="fas fa-shield-alt"></i> Kiểm tra tính hợp lệ</h3>
+                        <div id="validationResults" class="validation-results"></div>
+                    </div>
+
+                    <div class="optimization-panel">
+                        <h3><i class="fas fa-lightbulb"></i> Khuyến nghị tối ưu</h3>
+                        <div id="recommendations" class="recommendations-list"></div>
+                    </div>
+
+                    <div class="comparison-panel">
+                        <h3><i class="fas fa-balance-scale"></i> So sánh chiến lược</h3>
+                        <div class="strategy-comparison">
+                            <button id="compareStrategies" class="btn-primary">
+                                <i class="fas fa-analytics"></i> So sánh các chiến lược
+                            </button>
+                            <div id="comparisonResults" class="comparison-results"></div>
+                        </div>
+                    </div>
+
+                    <div class="export-panel">
+                        <h3><i class="fas fa-download"></i> Xuất kết quả</h3>
+                        <div class="export-options">
+                            <button id="exportPDF" class="btn-secondary">
+                                <i class="fas fa-file-pdf"></i> Xuất PDF
+                            </button>
+                            <button id="exportExcel" class="btn-secondary">
+                                <i class="fas fa-file-excel"></i> Xuất Excel
+                            </button>
+                            <button id="exportJSON" class="btn-secondary">
+                                <i class="fas fa-file-code"></i> Xuất JSON
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="timeline-panel">
+                        <h3><i class="fas fa-timeline"></i> Timeline học tập</h3>
+                        <div id="studyTimeline" class="study-timeline"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Loading Overlay -->
+        <div id="loadingOverlay" class="loading-overlay">
+            <div class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Đang xử lý thuật toán...</p>
+            </div>
+        </div>
+
+        <!-- Modal for course details -->
+        <div id="courseModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="courseDetails"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="src/js/algorithms.js"></script>
+    <script src="src/js/visualizations.js"></script>
+    <script src="src/js/app.js"></script>
+</body>
+
+</html>

@@ -1,4 +1,4 @@
-const curriculum = require("./data.json");
+const curriculum = require("./data_test_v1.json");
 
 /**
  * GIAI ĐOẠN 1: CẤU TRÚC DỮ LIỆU VÀ TIỀN XỬ LÝ

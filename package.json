@@ -1,0 +1,58 @@
+{
+  "name": "academic-scheduler",
+  "version": "1.0.0",
+  "description": "Hệ thống Lập Kế hoạch Học tập Tối ưu - 4 Phase Algorithm Implementation",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "echo 'Building JavaScript...' && mkdir -p dist/js && cp -r src/js/* dist/js/",
+    "build:css": "echo 'Building CSS...' && mkdir -p dist/css && cp -r src/css/* dist/css/",
+    "build:data": "echo 'Building Data...' && mkdir -p dist/data && cp -r src/data/* dist/data/",
+    "build:all": "npm run build && npm run build:data && cp *.html dist/ && cp server.js dist/",
+    "test": "echo 'Running tests...' && node tests/test_v1.js",
+    "test:unit": "echo 'Running unit tests...'",
+    "test:integration": "echo 'Running integration tests...'",
+    "lint": "echo 'Linting code...'",
+    "clean": "rm -rf dist/* && echo 'Cleaned dist directory'",
+    "serve": "node server.js",
+    "serve:prod": "cd dist && node server.js"
+  },
+  "keywords": [
+    "academic",
+    "scheduler", 
+    "DAG",
+    "algorithm",
+    "education",
+    "optimization",
+    "topological-sort",
+    "greedy-algorithm",
+    "course-planning"
+  ],
+  "author": "NCKH Research Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "."
+  },
+  "homepage": "./demo.html",
+  "directories": {
+    "src": "./src",
+    "docs": "./docs", 
+    "test": "./tests",
+    "examples": "./examples"
+  },
+  "files": [
+    "src/**/*",
+    "docs/**/*",
+    "*.html",
+    "server.js",
+    "README.md"
+  ]
+}
